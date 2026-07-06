@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>GPA / CGPA Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+  <main class="app-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Academic tracker</p>
+        <h1>GPA / CGPA Calculator</h1>
+        <p class="lede">Track semesters, compute CGPA live, and simulate future results without losing your real data.</p>
+      </div>
+      <div class="hero-actions">
+        <button type="button" class="button button-danger" id="clearAllBtn">Clear All Data</button>
+      </div>
+    </header>
+
+    <section class="score-grid" aria-label="Summary metrics">
+      <article class="score-card score-card-primary">
+        <div class="score-meta">
+          <span class="score-label">Current CGPA</span>
+          <span class="score-badge">Real data</span>
+        </div>
+        <output id="cgpaValue" class="score-value" aria-live="polite">0.00</output>
+        <p id="cgpaNote" class="score-note">No completed semester data yet.</p>
+      </article>
+
+      <article class="score-card score-card-secondary">
+        <div class="score-meta">
+          <span class="score-label">Projected CGPA</span>
+          <span class="score-badge score-badge-alt">What-if</span>
+        </div>
+        <output id="projectedCgpaValue" class="score-value" aria-live="polite">0.00</output>
+        <p id="projectedCgpaNote" class="score-note">Add simulated semesters to see the projection.</p>
+      </article>
+    </section>
+
+    <nav class="mode-switch" role="tablist" aria-label="Calculator mode">
+      <button type="button" class="mode-tab is-active" id="realTab" role="tab" aria-selected="true" aria-controls="realPanel" data-mode="real">Real semesters</button>
+      <button type="button" class="mode-tab" id="whatIfTab" role="tab" aria-selected="false" aria-controls="whatIfPanel" data-mode="whatif">What-if simulation</button>
+    </nav>
+
+    <section id="realPanel" class="panel" role="tabpanel" aria-labelledby="realTab">
+      <div class="panel-head">
+        <div>
+          <h2>Real semesters</h2>
+          <p>These entries are saved to your browser and used for the live CGPA.</p>
+        </div>
+        <button type="button" class="button button-primary" id="addSemesterBtn">Add Semester</button>
+      </div>
+
+      <div id="realSemesters" class="semester-list" aria-live="polite"></div>
+
+      <section class="breakdown">
+        <div class="breakdown-head">
+          <h3>Semester breakdown</h3>
+          <p>Credits and GPA for each saved semester.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" aria-label="Semester breakdown table">
+            <thead>
+              <tr>
+                <th scope="col">Semester</th>
+                <th scope="col">Credits</th>
+                <th scope="col">GPA</th>
+              </tr>
+            </thead>
+            <tbody id="realBreakdownBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+    <section id="whatIfPanel" class="panel is-hidden" role="tabpanel" aria-labelledby="whatIfTab" hidden>
+      <div class="panel-head">
+        <div>
+          <h2>What-if simulation</h2>
+          <p>Build hypothetical future semesters and compare the projected CGPA.</p>
+        </div>
+        <div class="panel-actions">
+          <button type="button" class="button button-secondary" id="resetSimulationBtn">Reset Simulation</button>
+          <button type="button" class="button button-primary" id="addSimulationBtn">Add What-If Semester</button>
+        </div>
+      </div>
+
+      <div id="simulationSemesters" class="semester-list" aria-live="polite"></div>
+
+      <section class="breakdown breakdown-compact">
+        <div class="breakdown-head">
+          <h3>Projection breakdown</h3>
+          <p>Real and simulated semesters combined for the projection.</p>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" aria-label="Projected semester breakdown table">
+            <thead>
+              <tr>
+                <th scope="col">Semester</th>
+                <th scope="col">Type</th>
+                <th scope="col">Credits</th>
+                <th scope="col">GPA</th>
+              </tr>
+            </thead>
+            <tbody id="projectionBreakdownBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
