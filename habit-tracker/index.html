@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ledger — Habit Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- Header -->
+    <header class="header">
+      <h1 class="header__title">Ledger</h1>
+      <p class="header__subtitle">A daily record of the habits you keep.</p>
+    </header>
+
+    <div class="layout">
+
+      <!-- Sidebar: add habit + habit list -->
+      <aside class="sidebar">
+
+        <form id="add-habit-form" class="add-habit">
+          <label for="habit-name" class="add-habit__label">New entry</label>
+          <div class="add-habit__row">
+            <input
+              type="text"
+              id="habit-name"
+              placeholder="e.g. Read 10 pages"
+              maxlength="40"
+              autocomplete="off"
+              required
+            />
+            <button type="submit" class="btn btn--primary">Add</button>
+          </div>
+        </form>
+
+        <ul id="habit-list" class="habit-list">
+          <!-- Habit items injected by JS -->
+        </ul>
+
+        <p id="empty-state" class="empty-state" hidden>
+          No habits yet. Add your first one above to start your ledger.
+        </p>
+
+      </aside>
+
+      <!-- Main: selected habit's 30-day calendar -->
+      <main class="main">
+
+        <div id="no-selection" class="no-selection">
+          <p>Select a habit from the list, or add a new one, to see its 30-day log.</p>
+        </div>
+
+        <div id="habit-detail" class="habit-detail" hidden>
+
+          <div class="habit-detail__header">
+            <div>
+              <h2 id="detail-name" class="habit-detail__name">Habit name</h2>
+              <p class="habit-detail__hint">Tap a day to stamp it done. Tap again to undo.</p>
+            </div>
+            <div class="streak-badge">
+              <span id="streak-count" class="streak-badge__number">0</span>
+              <span class="streak-badge__label">day streak</span>
+            </div>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat">
+              <span id="stat-completed" class="stat__number">0</span>
+              <span class="stat__label">completed / 30 days</span>
+            </div>
+            <div class="stat">
+              <span id="stat-best" class="stat__number">0</span>
+              <span class="stat__label">best streak</span>
+            </div>
+          </div>
+
+          <div id="calendar-grid" class="calendar-grid">
+            <!-- 30 day cells injected by JS -->
+          </div>
+
+          <button id="delete-habit" class="btn btn--danger">Remove this habit</button>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
