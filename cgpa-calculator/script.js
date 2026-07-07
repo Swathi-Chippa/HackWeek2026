@@ -1,8 +1,5 @@
-/* eslint-disable no-use-before-define */
-
 const STORAGE_KEY = "cgpa-calculator-real-data-v1";
 
-// Keep the grade mapping in one place so the scale is easy to edit later.
 const GRADE_POINTS = {
   O: 10,
   "A+": 9,
