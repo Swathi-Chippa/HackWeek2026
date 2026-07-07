@@ -67,7 +67,3 @@ Rows with missing or invalid credits/grades are excluded from the calculation ra
 - Only real semester data is persisted; what-if simulations are meant to be disposable and reset on refresh by design.
 - The "Clear All Data" button wipes both real and simulated data (with a confirmation prompt) and clears `localStorage`.
 - The "Reset Simulation" button clears only the what-if semesters.
-
-## Submission
-
-Built for COSC HackWeek 2026 — CGPA Calculator challenge (Frontend, Beginner, 100 points).
