@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNIT-16 — Soundboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="unit">
+  <div class="plate">
+    <div>
+      <div class="plate-title">UNIT<span>-16</span> SOUNDBOARD</div>
+      <div class="plate-sub">synthesized pad instrument &middot; no samples, no downloads</div>
+    </div>
+    <div class="plate-sub" style="text-align:right;">16 PADS<br>WEB AUDIO</div>
+  </div>
+
+  <div class="layout">
+    <div class="pad-grid" id="padGrid"></div>
+
+    <div class="rack">
+      <div class="fader-block">
+        <div class="fx-label">Level</div>
+        <div class="fader-track-wrap">
+          <input type="range" class="vfader" id="volume" min="0" max="100" value="70" aria-label="Master volume">
+        </div>
+        <div class="fx-value" id="volVal">70%</div>
+      </div>
+      <button class="stop-btn" id="stopAll" aria-label="Stop all sounds">■ Stop<br>All</button>
+    </div>
+  </div>
+
+  <div class="footstrip">
+    <div class="rec"><span class="dot amber" id="mainDot"></span> ready</div>
+    <div id="voiceCount">0 voices active</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
