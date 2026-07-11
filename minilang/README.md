@@ -117,18 +117,21 @@ print(factorial(5)); // 120
 ### 1. FizzBuzz (`examples/fizzbuzz.ml`)
 Classic FizzBuzz from 1 to 30, using a `for` loop and nested `if/else`.
 
-![FizzBuzz output](screenshots/fizzbuzz_output.png)
+<img width="1600" height="900" alt="fizzbuzz" src="https://github.com/user-attachments/assets/9b8249fb-6dad-45dc-b3f5-5defcc217016" />
+
 
 ### 2. Factorial & Fibonacci (`examples/factorial_fibonacci.ml`)
 Recursive functions computing factorials 0–10 and the first 12 Fibonacci numbers.
 
-![Factorial and Fibonacci output](screenshots/factorial_fibonacci_output.png)
+<img width="1600" height="900" alt="factorial" src="https://github.com/user-attachments/assets/f2f23dc7-a219-4eba-99cd-475a7f791178" />
+
 
 ### 3. Prime Sieve (`examples/primes.ml`)
 Finds all primes up to 50 via trial division, using nested `while` loops and
 boolean logic (`and`).
 
-![Prime sieve output](screenshots/primes_output.png)
+<img width="1600" height="900" alt="prime numbers" src="https://github.com/user-attachments/assets/359e9a65-7eed-4c8d-8665-7663118840bc" />
+
 
 ## Design notes
 
