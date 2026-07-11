@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pikachu — Pure CSS Character Study</title>
+<meta name="description" content="Pikachu, hand-built entirely in HTML & CSS. No images, no SVG, no art generators." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="scene">
+
+    <div class="ambient" aria-hidden="true">
+      <div class="glow"></div>
+      <div class="bolt-mark"></div>
+      <span class="spark-particle p1"></span>
+      <span class="spark-particle p2"></span>
+      <span class="spark-particle p3"></span>
+      <span class="spark-particle p4"></span>
+    </div>
+
+    <header class="intro">
+      <span class="eyebrow">Character Study — Species No. 025</span>
+      <h1>Pikachu</h1>
+      <p class="tagline">The Electric Mouse Pokémon, rendered entirely in HTML &amp; CSS —
+        divs, gradients, clip-paths and shadows, no images or SVG.</p>
+    </header>
+
+    <div class="pika-stage" aria-hidden="true">
+
+      <div class="pika-figure">
+
+        <div class="tail"></div>
+
+        <div class="foot foot-left"></div>
+        <div class="foot foot-right"></div>
+
+        <div class="body">
+          <div class="belly"></div>
+        </div>
+
+        <div class="arm arm-left"></div>
+        <div class="arm arm-right"></div>
+
+        <div class="ear ear-left"><div class="ear-tip"></div></div>
+        <div class="ear ear-right"><div class="ear-tip"></div></div>
+
+        <div class="head">
+          <div class="cheek cheek-left"><span class="spark"></span></div>
+          <div class="cheek cheek-right"><span class="spark"></span></div>
+          <div class="eye eye-left"></div>
+          <div class="eye eye-right"></div>
+          <div class="nose"></div>
+          <div class="mouth"></div>
+        </div>
+
+      </div>
+
+      <div class="pedestal-shadow"></div>
+    </div>
+
+    <ul class="stat-row">
+      <li><span class="stat-label">Type</span><span class="stat-value">Electric</span></li>
+      <li><span class="stat-label">Height</span><span class="stat-value">0.4 m</span></li>
+      <li><span class="stat-label">Ability</span><span class="stat-value">Static</span></li>
+      <li><span class="stat-label">Signature move</span><span class="stat-value">Thunderbolt</span></li>
+    </ul>
+
+    <footer class="credit">
+      Hand-coded, not generated — <span>&lt;div&gt; · border-radius · clip-path · gradients · transforms</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
